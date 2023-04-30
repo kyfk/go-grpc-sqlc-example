@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package go_grpc_sqlc_boilerplate.account.v1;
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "validate/validate.proto";
+
+option go_package = "github.com/kyfk/go-grpc-sqlc-boilerplate/protogen/account/v1";
+
+service Account {
+  rpc SignUp(SignUpRequest) returns (SignUpRequest) {
+    option (google.api.http) = {
+      post: "/v1/signup"
+      body: "*"
+    };
+	}
+
+  rpc SignIn(SignInRequest) returns (SignInResponse) {
+    option (google.api.http) = {
+      post: "/v1/signin"
+      body: "*"
+    };
+	}
+}
+
+message SignUpRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message SignUpResponse {
+  string auth = 1;
+}
+
+message SignInRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message SignInResponse {
+  string auth = 1;
+}

@@ -1,0 +1,27 @@
+{
+  "version": "2",
+  "sql": [
+    {
+      "schema": "user/schema.sql",
+      "queries": "user/query.sql",
+      "engine": "mysql",
+      "gen": {
+        "go": {
+          "package": "user",
+          "out": "user"
+        }
+      }
+    },
+    {
+      "schema": "todo/schema.sql",
+      "queries": "todo/query.sql",
+      "engine": "mysql",
+      "gen": {
+        "go": {
+          "package": "todo",
+          "out": "todo"
+        }
+      }
+    }
+  ]
+}
