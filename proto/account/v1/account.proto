@@ -14,14 +14,14 @@ service Account {
       post: "/v1/signup"
       body: "*"
     };
-	}
+  }
 
   rpc SignIn(SignInRequest) returns (SignInResponse) {
     option (google.api.http) = {
       post: "/v1/signin"
       body: "*"
     };
-	}
+  }
 }
 
 message SignUpRequest {

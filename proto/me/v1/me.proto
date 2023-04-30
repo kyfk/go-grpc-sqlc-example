@@ -10,8 +10,6 @@ option go_package = "github.com/kyfk/go-grpc-sqlc-boilerplate/protogen/me/v1";
 
 service Me {
   rpc Resign(google.protobuf.Empty) returns (google.protobuf.Empty) {
-    option (google.api.http) = {
-      delete: "/v1/me"
-    };
-	}
+    option (google.api.http) = {delete: "/v1/me"};
+  }
 }
